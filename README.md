@@ -1,6 +1,7 @@
 # Secure File Transfer with Flask
 
 This Flask application provides a secure method for encrypting and decrypting files, using AES encryption. It allows users to upload files, encrypt them, and send them via email. Additionally, users can decrypt files received via email.
+This project utilizes 128 bit AES Encryption to encrypt audio, video and text files and use Image Steganography using Base64 encoding and LSB Technique to hide the key after encryption inside random images and facilitate secure file transfer.
 
 ## Features
 
