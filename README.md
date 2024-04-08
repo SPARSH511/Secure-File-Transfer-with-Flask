@@ -22,7 +22,7 @@ Before running the application, make sure you have the following installed:
 
 ## Installation
 1. Download the files on your computer. 
-2. Set up your email configuration in the `app.py` file:
+2. Set up your email configuration in the `app.py` file (use an OutLook Email):
     <br> EMAIL_USERNAME = '<your-email>' <br>
     EMAIL_PASSWORD = '<your-email-password>' <br>
 3. Run the app.py by using an IDE or the command:
