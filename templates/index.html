@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryptor and Decryptor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dedec9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 150px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="email"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: rgb(105, 198, 228);
+            color: rgb(24, 23, 23);
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #key_image_field {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleKeyImageField() {
+            var option = document.getElementById("option").value;
+            var keyImageField = document.getElementById("key_image_field");
+            if (option === "decrypt") {
+                keyImageField.style.display = "block";
+            } else {
+                keyImageField.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>File Encryptor and Decryptor</h1>
+        <form action="/" method="post" enctype="multipart/form-data" onsubmit="toggleKeyImageField()">
+            <label for="recipient_email">Recipient Email:</label>
+            <input type="email" name="recipient_email" id="recipient_email">
+            <label for="option">Select an option:</label>
+            <select name="option" id="option" onchange="toggleKeyImageField()">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            <label for="file">Select a file:</label>
+            <input type="file" name="file" id="file">
+            <div id="key_image_field">
+                <label for="key_image">Select an image with hidden key (for decryption):</label>
+                <input type="file" name="key_image" id="key_image">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
